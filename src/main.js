@@ -28,21 +28,20 @@ function movieDetails(event) {
         .then((data) => {
             list.innerHTML = "";
             data.results.forEach((element) => {
+                let poster = element.poster_path
+                let imageUrl = `https://image.tmdb.org/t/p/w500/${poster}`
                 if (element.poster_path === null) {
                     //alert('holiii')
-                     element.poster_path = 'img/no.png' 
-              }
-                //console.log(data)
+                    element.poster_path = imageUrl = 'img/no.png'
+                }
+
                 list.innerHTML +=
-                    `<div class="col-sm-12 col-md-4 col-lg-2">
-                        <img src="https://image.tmdb.org/t/p/w500/${element.poster_path}" class="card-img-top" " alt="${element.original_title} Imágen no Disponible" >
-                        <div class="card-body">
-                            <h5 class="card-title">${element.title}</h5>
-                        </div>
-                        <div class="row text-center">
-                            <button id="e-${element.id}" data-id="${element.id}" class="btn btns btn-lg btn-block btn-details">Ver más</button>
-                        </div>
-                    </div>`;
+                    `<div class="col-12 col-sm-12 col-md-4 col-lg-2">
+                <div class="card text-center cards">
+                    <img src="${imageUrl}" class="card-img-top img-card"  alt="${element.original_title} Imágen no Disponible">
+                    <button id="e-${element.id}" data-id="${element.id}" class="btn btns btn-lg btn-block btn-details">Ver más</button>
+                </div>
+            </div>`;
             });
             const buttons = document.querySelectorAll('.btn-details');
             for (const button of buttons) {
@@ -60,20 +59,20 @@ window.onload = () => {
         .then((data) => {
             list.innerHTML = "";
             data.results.forEach((element) => {
+                let poster = element.poster_path
+                let imageUrl = `https://image.tmdb.org/t/p/w500/${poster}`
                 if (element.poster_path === null) {
                     //alert('holiii')
-                     element.poster_path = 'img/no.png' 
-              }
+                    element.poster_path = imageUrl = 'img/no.png'
+                }
+
                 list.innerHTML +=
                     `<div class="col-sm-12 col-md-4 col-lg-2">
-                        <div class="card text-center cards">
-                            <img src="https://image.tmdb.org/t/p/w500/${element.poster_path}" class="card-img-top"  alt="${element.original_title} Imágen no Disponible" >
-                            <div class="card-body">
-                                <p class="card-title ">${element.title}</p>
-                            </div>
-                            <button id="e-${element.id}" data-id="${element.id}" class="btn btns btn-lg btn-block btn-details   ">Ver más</button>
-                        </div>
-                    </div>`;
+                <div class="card text-center cards">
+                    <img src="${imageUrl}" class="card-img-top img-card"  alt="${element.original_title} Imágen no Disponible">
+                    <button id="e-${element.id}" data-id="${element.id}" class="btn btns btn-lg btn-block btn-details">Ver más</button>
+                </div>
+            </div>`;
             });
             addListenerButtonDetails();
         })
@@ -97,10 +96,7 @@ window.onload = () => {
                 data.Search.forEach((element) => {
                     if (element.Poster === 'N/A') {
                         element.Poster = 'img/no.png'
-
-                        
                     }
-                    //console.log(data)
                     list.innerHTML +=
                         `<div class="col-sm-12 col-md-4 col-lg-2">
                     <div class="card text-center cards">
@@ -129,7 +125,6 @@ window.onload = () => {
     /*Filtro por Top Rated*/
     const ratedMovie = document.getElementById("rated-movie");
     ratedMovie.addEventListener("change", () => {
-        
         filterMovies();
     })
 
@@ -138,34 +133,32 @@ window.onload = () => {
         const yearMovie = document.getElementById("year-movie").value;
         const filterMovie = document.getElementById("genre-movie").value;
 
-        const params = { api_key: "879f4d45aca2ee6235c83898a8eb220c", with_genres: filterMovie, 
-                        sort_by: 'vote_average.'+ ratedMovie, primary_release_year: yearMovie, language: 'es-ES'};
+        const params = {
+            api_key: "879f4d45aca2ee6235c83898a8eb220c", with_genres: filterMovie,
+            sort_by: 'vote_average.' + ratedMovie, primary_release_year: yearMovie, language: 'es-ES'
+        };
         const urlParams = new URLSearchParams(Object.entries(params));
         fetch(`https://api.themoviedb.org/3/discover/movie?${urlParams}`)
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
-           
                 list.innerHTML = "";
                 data.results.forEach((element) => {
-                    let poster= element.poster_path
-              let imageUrl = 'https://image.tmdb.org/t/p/w500/'+poster
+                    let poster = element.poster_path
+                    let imageUrl = `https://image.tmdb.org/t/p/w500/${poster}`
                     if (element.poster_path === null) {
                         //alert('holiii')
-                        element.poster_path = imageUrl='img/no.png' 
-                  } 
-                   
+                        element.poster_path = imageUrl = 'img/no.png'
+                    }
+
                     list.innerHTML +=
-                    `<div class="col-sm-12 col-md-4 col-lg-2">
-                        <div class="card text-center cards">
-                            <img src="${imageUrl}" class="card-img-top"  alt="${element.original_title} Imágen no Disponible">
-                            <div class="card-body">
-                                <p class="card-title ">${element.title}</p>
-                            </div>
-                            <button id="e-${element.id}" data-id="${element.id}" class="btn btns btn-lg btn-block btn-details">Ver más</button>
-                        </div>
-                    </div>`;
+                        `<div class="col-sm-12 col-md-4 col-lg-2">
+                    <div class="card text-center cards">
+                        <img src="${imageUrl}" class="card-img-top img-card"  alt="${element.original_title} Imágen no Disponible">
+                        <button id="e-${element.id}" data-id="${element.id}" class="btn btns btn-lg btn-block btn-details">Ver más</button>
+                    </div>
+                </div>`;
                 });
                 addListenerButtonDetails();
             });
