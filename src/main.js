@@ -104,16 +104,13 @@ window.onload = () => {
                     list.innerHTML +=
                         `<div class="col-sm-12 col-md-4 col-lg-2">
                     <div class="card text-center cards">
-                        <img src="${element.Poster}" class="card-img-top"  alt="${element.Title} Imágen no Disponible">
-                        <div class="card-body">
-                            <p class="card-title ">${element.Title}</p>
-                        </div>
+                        <img src="${element.Poster}" class="card-img-top img-card"  alt="${element.Title} Imágen no Disponible">
+                        
                         <button id="e-${element.imdbID}" data-id="${element.imdbID}" class="btn btns btn-lg btn-block btn-details   ">Ver más</button>
                     </div>
                 </div>`;
                 });
                 addListenerButtonDetails();
-
             })
     });
 
@@ -126,7 +123,6 @@ window.onload = () => {
     /*Filtro por año*/
     const yearMovie = document.getElementById("year-movie");
     yearMovie.addEventListener("change", () => {
-
         filterMovies();
     })
 
