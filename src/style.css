@@ -1,7 +1,7 @@
 body {
   background-image: url(img/p.jpg);
 }
-
+/*div que contiene las películas*/
 #movies {
   display: flex;
   justify-content: center;
@@ -11,7 +11,7 @@ body {
   display: flex;
   align-items: center;
 }
-
+/*Cards Style*/
 .cards {
     border-radius: 0.25rem;
     background-color: #ffffff00;
@@ -43,6 +43,7 @@ body {
   height: 5rem;
 }
 
+/*Navbar style*/
 navbar-expand-lg {
     margin: auto;
 }
@@ -50,7 +51,7 @@ navbar-expand-lg {
 navbar-expand {
     margin: auto;
 }
-
+/*Misceláneos*/
 .btns {
     border:0rem;
     width: 9.81rem;
@@ -63,7 +64,7 @@ navbar-expand {
     width: 9.81rem;
     height: 14.75rem;
 }
-
+/*Modals Style*/
 .img-modal{
     width: 10rem;
     height: 15rem;

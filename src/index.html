@@ -11,6 +11,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Popcorn Family</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
 </head>
 
 <body>
@@ -24,14 +25,15 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto align-left">
-                    <li class="nav-item active">
-                        <a id="home" class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom"
-                            title="Volver a la página principal">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a href="#modal-description" type="button" class="btn color-black" data-toggle="modal">¿Qué es
-                            PorCorn Family?<span class="sr-only">(current)</span></a>
-                    </li>
+                        <li class="nav-item active">
+                                <a id="home" class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom"
+                                    title="Volver a la página principal"><span class="font-weight-bold">Home</span><span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="#modal-description" class="nav-link" data-toggle="modal"><span class="font-weight-bold">¿Qué es
+                                    PorCorn Family?</span><span class="sr-only">(current)</span></a>
+                            </li>
+                   
                 </ul>
 
                 <form class="form-inline my-2 my-lg-0">
@@ -98,20 +100,22 @@
             <div class="modal-content">
                 <div class="modal-header bg-warning">
                     <h3 class="modal-title">¿Qué es PopCorn Family?</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                        
                         <div class="col-sm-12 col-md-8 col-lg-8">
 
-                            <p>PopCorn Family es una aplicación web, drigida a toda la familia. Podrás
-                                ver la
-                                información de las peliculas realizando busqueda por nombre, o, filtrando por género,
+                            <p>PopCorn Family es una aplicación web, dirigida a toda la familia. Podrás
+                                ver la información de las películas realizando búsqueda por nombre, o, filtrando por género,
                                 año y ranking</p>
                             <h5>Modo de uso</h5>
-                            <p>Para comenzar a utilizar PopCorn Family, dirigete las opciones que se encuentran en la
-                                parte superior de la pagina, con ellas, podras realizar filtro por género de la
-                                pelicula, año, y el ranking de las más y menos votadas.</p>
+                            <p>Para comenzar a utilizar PopCorn Family, dirígete a las opciones que se encuentran en la
+                                parte superior de la pagina, con ellas, podrás realizar filtro por género de la
+                                película, año, y el ranking de las más y menos votadas.</p>
                         </div> <div class="col-sm-12 col-md-4 col-lg-4">
                             <img src="img/hi.png" class="img-modal mx-auto d-block rounded" />
                         </div>
@@ -150,6 +154,15 @@
             </div>
         </div>
     </div>
+    <!--Fin div modal-->
+    <!-- Footer-->
+    <footer class="py-4 bg-warning text-dark-50">
+            <div class="container text-center">
+              <small>Copyright &copy; PopCorn Family - Created by: "Squad 1, Malvados y asociados"</small>
+            </div>
+          </footer>
+    <!-- Footer -->
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
